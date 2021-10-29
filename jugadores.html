@@ -1,0 +1,25 @@
+<h1 id="titulojugadores"
+style="color:blue">Jugadores del equipo</h1>
+<div id="capajugadores"></div>
+<script>
+    $(document).ready(function() {
+        //BUSCAMOS DATA EN EL PARENT
+        var idequipo = $("#container").data("idequipo");
+        console.log(idequipo);
+        $("#titulojugadores").text("Jugadores del equipo " + idequipo);
+        //INVENTAMOS JUGADORES
+        for (var i = 1; i <= 5; i++){
+            var boton = $("<button>",{
+                "text": "Jugador " + i
+                ,"data-idjugador": i
+                , "class": "btn btn-success"
+            });
+            $("#capajugadores").append(boton);
+            boton.click(function() {
+                var id = $(this).data("idjugador");
+                var pagina = "detallesjugador.html";
+                $("#container").load(pagina).data("idjugador", id);
+            });
+        }
+    });
+</script>

@@ -24,7 +24,6 @@
             $("#menu").load("menu.html");
             $("button").click(function() {
                 var id = $(this).data("idequipo");
-                // var pagina = "./detalleequipo.html?idequipo=" + id;
                 var pagina = "detalleequipo.html";
                 console.log(pagina);
                 $("#container").load(pagina).data("idequipo", id);

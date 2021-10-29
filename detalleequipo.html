@@ -1,9 +1,18 @@
 <h1 id="titulo">Detalles de equipo</h1>
+<button id="botonjugadores">
+    Mostrar jugadores
+</button>
 <script>
     $(document).ready(function() {
         //BUSCAMOS DATA EN EL PARENT
         var idequipo = $("#container").data("idequipo");
         console.log(idequipo);
+        $("#botonjugadores").data("idequipo", idequipo);
         $("#titulo").text("Detalles de equipo " + idequipo);
+        $("#botonjugadores").click(function() {
+            var id = $(this).data("idequipo");
+            var pagina = "jugadores.html";
+            $("#container").load(pagina).data("idequipo", id);
+        });
     });
 </script>

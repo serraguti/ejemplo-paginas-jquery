@@ -1,0 +1,10 @@
+<h1 id="titulojugador"
+style="color:red">Detalles Jugador</h1>
+<script>
+    $(document).ready(function() {
+        //BUSCAMOS DATA EN EL PARENT
+        var idjugador = $("#container").data("idjugador");
+        console.log(idjugador);
+        $("#titulojugador").text("Detalles Jugador " + idjugador);
+    });
+</script>
